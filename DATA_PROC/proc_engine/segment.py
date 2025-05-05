@@ -2,7 +2,7 @@ import pandas as pd
 import py_vncorenlp
 from tqdm import tqdm
 
-df = pd.read_csv("DATA/labeled_comments3.csv")
+df = pd.read_csv("DATA/processed_support2.csv")
 
 # py_vncorenlp.download_model(save_dir='DATA_PROC/proc_engine/vncorenlp')
 
@@ -15,4 +15,4 @@ def segment_text(text: str):
 tqdm.pandas()
 df["Comment Text"] = df["Comment Text"].apply(segment_text)
 
-df.to_csv("/home/lamonade/Engineering/KSH_semantic_analysis/DATA/labeled_comments_segmented_3.csv", index=False)
+df.to_csv("/home/lamonade/Engineering/KSH_semantic_analysis/DATA/support_comments_segmented_2.csv", index=False)
